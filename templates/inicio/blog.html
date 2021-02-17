@@ -1,0 +1,102 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+{% block title %} Noticias | Dpto Extension e Investigacion {% endblock %}
+
+{% block detalle %}
+{% endblock %}
+
+{% block body %}
+
+
+	<!-- About section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				{% if noticia %}
+				{% for noticia in noticia %}
+				<div class="col-lg-8">
+					
+					
+					<!-- Blog item -->
+					<div class="blog-item">
+						<div class="blog-thumb set-bg" data-setbg="{{ noticia.imagen | safe }}">
+							<div class="blog-date">
+								<h2>15</h2>
+								<span>may</span>
+								<span>2018</span>
+							</div>
+						</div>
+			
+						<div class="blog-content">
+							<h3>{{ noticia.descripcion}}</h3>
+							<div class="blog-meta">
+								<a href=""><span>By</span> Admin</a>|
+								<a href=""><span>in</span> School</a>|
+								<a href="">3 Comments</a>  
+							</div>
+							<p>{{ noticia.contenido | safe }}</p>
+							<div class="blog-tag">
+								<a href="#">school</a>
+								<a href="#">course</a>
+								<a href="#">education</a>
+							</div>
+						</div>
+					</div>
+					<div class="site-pagination">
+						<span>01.</span>
+						<a href="#">02.</a>
+						<a href="#">03</a>
+					</div>
+				</div>
+				{% endfor %}
+			
+				{% else %}
+					<span> No existe post disponible</span>
+				{% endif %}
+				<!-- sidebar -->
+				<div class="col-lg-4 col-md-7 search pt-5 pt-lg-0">
+					<div class="widget">
+						<form method="get" class="search-form">
+							<div id="custom-search-input">
+								<div class="input-group col-md-12">
+									<input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+									<span class="input-group-list">
+										<button type="submit" class="boton btn-primary">buscar</button>
+									</span>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+					<div class="widget">
+						<h3 class="widget-title">Categories</h3>
+						<ul>
+							<li><a href="#">Books<span>(9)</span></a></li>
+							<li><a href="#">Events<span>(6)</span></a></li>
+							<li><a href="#">Courses<span>(6)</span></a></li>
+							<li><a href="#">Teachers<span>(7)</span></a></li>
+							<li><a href="#">Music<span>(33)</span></a></li>
+							<li><a href="#">Uncategorized<span>(7)</span></a></li>
+							<li><a href="#">School<span>(6)</span></a></li>
+						</ul>
+					</div>
+
+					<div class="widget">
+						<div class="newslatter-card set-bg" data-setbg="img/nl-card-bg.jpg">
+							<h5>Stay updated</h5>
+							<form class="newslatter-form">
+								<input type="text" placeholder="Your E-mail">
+								<button class="site-btn">Subscribe <i class="fa fa-angle-right"></i></button>
+							</form>
+							<p>*Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesqu e sit am et tellus blandit. Etiam nec odio vestibul.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
+
+
+
+{% endblock %}

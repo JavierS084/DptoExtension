@@ -1,0 +1,43 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+
+{% block title %} Registro | Dpto Extension e Investigacion {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/css3.css' %}">
+
+
+{% endblock %}
+
+
+{% block body %}
+
+  <h1>Registrar</h1>
+<div class="testbox">
+  <form method="POST">
+    {% csrf_token %}
+    <hr>
+    <div class="help">Advertencia: 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_ </div>
+    <label id="icon" for="id_username"><i class="icon-user"></i></label>
+    <input type="text" name="username"  placeholder="Nombre de Usuario"  maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username"/>
+
+    <label id="icon" for="first_name"><i class="icon-user"></i></label>
+    <input type="text" name="first_name" id="firs_name" placeholder="Nombre" required/>
+
+    <label id="icon" for="last_name"><i class="icon-user"></i></label>
+    <input type="text" name="last_name" id="last_name" placeholder="Apellido" required/>
+
+    <label id="icon" for="name"><i class="icon-envelope "></i></label>
+    <input type="text" name="email" id="name" placeholder="Correo" required/>
+
+    <label id="icon" for="id_password1"><i class="icon-shield"></i></label>
+    <input type="password" autocomplete="new-password"  name="password1" required id="id_password1" placeholder="Contraseña" />
+  
+    <label id="icon" for="id_password2"><i class="icon-shield"></i></label>
+    <input type="password" autocomplete="new-password"  name="password2" required id="id_password2" placeholder="Confirmar Contraseña" />
+     
+    <button class="button" type="submit">Registrar</button> 
+
+  </form>
+</div>
+
+{% endblock %}

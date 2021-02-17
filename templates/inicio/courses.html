@@ -1,0 +1,104 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+
+{% block title %} Actividades | Dpto Extension e Investigacion {% endblock %}
+	
+{% block detalle %}
+{% endblock %}
+
+
+{% block body %}
+	<!-- Page top section -->
+
+
+	<!-- Courses section  -->
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="sec-title text-center">
+			
+				<h2>Actividades</h2>
+			</div>
+			<div class="row courses-page">
+				<!-- course -->
+
+				{% if actP %}
+					{% for actP in actP %}
+					
+				<div class="col-lg-12">
+					<div class="course-item featured">
+						<div class="course-preview set-bg">
+							<p class="post-subtitle">{{ actP.imagen | safe }}</p>
+							<div class="price">Cyt</div>
+							<div class="featur-badges">UNI</div>	
+						</div>
+						<div class="course-content">
+							<div class="cc-text">
+								<p class="post-subtitle">{{ actP.contenido | safe }}</p>
+								<span><i class="flaticon-student-2"></i>20</span>
+								<span><i class="flaticon-placeholder"></i>3</span>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star i-fade"></i>
+								</div>
+							</div>
+							<div class="seller-info">
+								<h5 class="post-subtitle">{{ actP.descripcion}}</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			
+			{% else %}
+					<span> No existe post disponible</span>
+			{% endif %}
+				<!-- course -->
+				<div class="course-slider owl-carousel">
+		{% if act %}
+			{% for act in act %}
+			
+				<div class="course-item">
+						<figure class="course-preview">
+							<p class="post-subtitle">{{ act.imagen | safe }}</p>
+							<div class="price">CyT</div>
+						</figure>
+
+					<div class="course-content">
+					
+						<div class="cc-text">
+							<p class="post-subtitle">{{ act.contenido | safe }}</p>
+							<span><i class="flaticon-student-2"></i>20</span>
+							<span><i class="flaticon-placeholder"></i>3</span>
+							<div class="rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star i-fade"></i>
+							</div>
+						</div>
+					
+						<div class="seller-info">
+							<h5 class="post-subtitle">{{ act.descripcion}}</h5>
+						</div>
+					</div>
+				</div>
+			
+			{% endfor %}
+			
+		{% else %}
+			<span> No existe post disponible</span>
+		{% endif %}
+				<!-- course -->
+				
+			</div>
+			<div class="text-center pt-2">
+				<button class="site-btn">Load More <i class="fa fa-angle-right"></i></button>
+			</div>
+		</div>
+	</section>
+	<!-- Courses section end -->
+	{% endblock %}

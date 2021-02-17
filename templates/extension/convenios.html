@@ -1,0 +1,32 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+{% block title %} Convenios | Dpto Extension e Investigacion {% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block body %} 
+<div class="convenio">
+   
+	
+    <div class="container">
+        <div class="azen-categories-list" data-cloneable=""><!-- ngRepeat: d in datos -->
+            
+                <p><span ng-repeat="d in datos" class="ng-scope">
+                    <h3 >Lista de Convenios</h3>
+                    <br><span>Lista de Convenios de la FaCyT</span><br>
+                   <button class="colorconvenio" > <a href="https://drive.google.com/uc?export=download&amp;confirm=no_antivirus&amp;id=0B3WcMvmV_TvTNmpoNi1NXzhveUxhcjJ5MlR1SjRZTW5JeG44" >Descargar</a></button> 
+                    <br>
+                    <br>
+                    <br>
+                
+                   <br> <span>Lista de Convenios de pasantías Educativas</span><br>
+                    <button  class="colorconvenio" ><a href="https://drive.google.com/uc?export=download&amp;confirm=no_antivirus&amp;id=0B3WcMvmV_TvTUUxGX3J3eWVwbF9Ic1psUWF2US1iSFYza1dB" >Descargar</a></button> 
+                </span></p>
+            
+            
+        </div>
+        
+        </div>
+</div>
+
+{% endblock %}

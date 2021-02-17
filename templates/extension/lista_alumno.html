@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block title %} lista de alumnos {% endblock %}
+
+{% block body %} 
+<br>
+
+
+{% if alumnolist %}
+<div class="span4">
+    <section>
+        <table  class="table table-bordered">   
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>CI</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Sede</th>
+                <th>Carrera</th>
+                <th>Hora de extension</th>
+                <th>Accion</th>
+                <th>Accion</th>
+               
+            </tr>
+            </thead>
+            <tbody>
+            {% for alumnolist in alumnolist %}
+                <tr> 
+                    <td>{{ alumnolist.nombre }}</td>
+                    <td>{{ alumnolist.apellido }}</td>
+                    <td>{{ alumnolist.CI}}</td>
+                    <td>{{ alumnolist.email}}</td>
+                    <td>{{ alumnolist.telefono }}</td>
+                    <td>{{ alumnolist.sede_id }} </td>
+                    <td>{{ alumnolist.carrera_id }}</td>
+                    <td> {{ alumnolist.horaExtension }}</td>
+                    <td><a  href="{% url 'extension:edit_alumno' alumnolist.id %}"><button class="btn btn-primary">Editar</button></a></td>
+                    <td><a  href="{% url 'extension:delete_alumno' alumnolist.id %}"><button class="btn btn-danger">Eliminar</button></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% else %}
+        <h3>No existe alumnos</h3>
+        {% endif %}
+    </section>
+   
+{% endblock %}

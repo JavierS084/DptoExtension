@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<body>
+	<header class="header-section">
+	
+		<div class="header-warp" >
+		  <div class="container-fluid">	
+				<a href="http://www.cyt.uni.edu.py/#/" class="site-logo">
+				<img class="idBarraimg" src="{% static 'img/logoCyT.png' %}" alt="">
+				</a>
+				
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+	
+	
+				  <ul class="main-menu active">
+					
+					<li><a class="active" data-nav-section="inicio" href="{% url 'index' %}">Inicio</a></li>
+					<li><a class="active" href="{% url 'extension:courses' %}">Actividades</a></li>
+					<li><a class="active" href="{% url 'extension:blog'%}">Noticias</a></li>
+				
+					<li class="dropdown">
+						 <a href="#" data-toggle="dropdown">Extension</a> 
+						 <ul class="dropdown-menu">
+							<li><a  href="{% url 'extension:convenio' %}">Convenios</a></li>
+							<li><a  href="{% url 'extension:bienestar'%}">Bienestar Estudiantil</a></li>
+							<li><a  href="">Egresados</a></li>
+						</ul>
+					</li>
+			
+					<li class="dropdown">
+						<a href="#"  data-toggle="dropdown">Proyectos </a>
+						<ul class="dropdown-menu">
+						   <li><a  href="{% url 'extension:investigadores' %}">Docentes Investigadores</a></li>
+						   <li><a  href="{% url 'extension:formato' %}">Formato de Proyecto</a></li>
+						   <li><a  href="{% url 'extension:politica' %}">Politica de investigación</a></li>
+						   <li><a  href="{% url 'extension:certificacion' %}">Certificación Online Taller De Capacitación- Resolución</a></li>
+						</ul> 
+					</li>
+	
+					<li class="dropdown">
+						<a href="#"  data-toggle="dropdown">Trabajo Final</a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'extension:trabajofinales' %}">Trabajos Finales</a></li>
+							<li><a href="{% url 'extension:reglamento' %}">Reglamento Interno TFG</a></li>
+							<li><a href="{% url 'extension:guiatrabajofinales' %}">Guia de Trabajo Final de Grado</a></li>
+							<li><a href="{% url 'extension:manualbiblograficas' %}">Manual de Citas Bibliograficas </a></li>
+							<li><a href="{% url 'extension:normaiso' %}">Norma ISO 690 2010</a></li>
+	
+						</ul> 
+					</li>
+					
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown">Portafolio</a> 
+						<ul  class="dropdown-menu">
+							<li><a  href="{% url 'extension:perfil' %}">Mi Perfil</a></li>
+							<li><a  href="{% url 'register'%}">Registrarse</a></li>
+							<li><a  href="{% url 'login' %}">Iniciar sesión</a></li>
+							<li><a  href="{% url 'logout' %}">Cerrar sesión </a></li>
+								
+						</ul>
+					</li>
+				</ul>	 
+				
+			</div>
+		</div>
+	
+	</header>
+</body>
+</html>

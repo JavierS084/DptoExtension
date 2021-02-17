@@ -1,0 +1,35 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+
+{% block title %}
+   Entrega de Certificados | Dpto Extension e Investigacion
+
+{% endblock %}
+    
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="convenio">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+            <form  method="POST" >
+            {% csrf_token %}
+                <p>
+                    
+                    <label>{{ form.Documento.label }}</label>
+                    <div class="file">{{ form.Documento }}</div>
+                 <p>
+                    <button type="submit">Enviar</button> 
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

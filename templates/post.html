@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} {{detailPost.titulo}} {% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<h1></h1>
+{{ detailPost.contenido | safe }}
+{% endblock %}

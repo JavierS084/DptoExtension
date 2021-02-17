@@ -1,0 +1,123 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+
+
+	
+	{% block head %}
+	<title>Login | Dpto Extension</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+<!--===============================================================================================--> 
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+	{% endblock %}
+	
+
+	{% block body %}
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<span class="login100-form-title p-b-33">
+					Iniciar Sesión
+				</span>
+					<div class="login-form">
+						<form method="POST">
+						  {% csrf_token %}
+							<div class="form-group">
+							  {% if form.error_messages %}
+								  <div class="alert alert-danger alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss = "alert" aria-label = "Close">
+									  <span aria-hidden = "true">&times;</span>
+									</button>
+									<strong>Advertencia: </strong> {{ form.get_invalid_login_error }}
+								  </div>
+							  	{% endif %}
+								 
+								<label>Nombre de usuario</label>
+								{{ form.username }}
+							</div>
+							<div class="form-group">
+								<label>Contraseña</label>
+								{{ form.password }}
+							</div>
+							<div class="container-login100-form-btn m-t-20">
+								<button type="submit" class="login100-form-btn" >
+									Iniciar
+								</button>
+						</form>
+					</div>
+					<div class="text-center p-t-45 p-b-4">
+						<span class="txt1">
+							¿Olvidó su nombre de
+						</span>
+
+						<a href="#" class="txt2 hov1">
+							usuario / contraseña?
+						</a>
+					</div>
+
+					<div class="text-center">
+						<span class="txt1">
+							¿Crea una cuenta?
+						</span>
+
+						<a href="{% url 'register'%}" class="txt2 hov1">
+							Regístrate
+						</a>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+	
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+	
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+ 
+
+	{% endblock %}
+

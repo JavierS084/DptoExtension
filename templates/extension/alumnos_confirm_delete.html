@@ -1,0 +1,14 @@
+{% extends 'inicio/index.html' %}
+{% block title %}
+    Eliminar alumno 
+{% endblock %}
+    
+{% block body %}
+<div class="center-text">
+<form method="POST">
+    {% csrf_token %}
+    <p><strong>Desea eliminar el registro {{object}} ?</strong></p>
+    <button type="submit" class="btn btn-danger"> Confirmar</button>
+</form>
+</div>
+{% endblock %}

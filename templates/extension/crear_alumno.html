@@ -1,0 +1,62 @@
+{% extends 'inicio/index.html' %}
+{% block title %}
+   Nuevo alumno | Dpto Extension e Investigacion
+{% endblock %}
+    
+{% block body %}
+<br>
+
+
+    <div class="formulario">
+        <form  method="POST" >
+            {% csrf_token %}
+            {% if error %}
+                    <h2>{{ error }}</h2>
+            {% else %}
+
+                    <p>
+                       <div class=" col col-md-6">{{ form.nombre.label }}</div> 
+                        <div class=" pt-lg-4 col-3 ">{{ form.nombre }}</div>
+                    <p>
+                        <div class=" col col-md-6">{{ form.apellido.label }}</div> 
+                    <div class="col-3"> {{ form.apellido }}</div>
+                    </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.CI.label }}</div>
+                    <div class="col-3">{{ form.CI }}</div>
+                   </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.email.label }}</div>
+                    <div class="col-3">{{ form.email }}</div>
+                   
+                   </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.telefono.label }}</div>
+                   <div class="col-3">{{ form.telefono }}</div> 
+                   </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.sede_id.label }}</div>
+                    <div class="col-3">{{ form.sede_id }}</div>
+                   </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.carrera_id.label }}</div>
+                    <div class="col-3">{{ form.carrera_id }}</div>
+                   </p>
+                   <p>
+                    <div class=" col col-md-6">{{ form.horaExtension.label }}</div>
+                    <div class="col-3">{{ form.horaExtension  }}</div>
+                   </p>
+                   <div class="col col-3"><button class="btn btn-primary" type="submit"> Crear</button></div>
+                  
+  
+                  
+
+            
+
+            {% endif %}
+             
+        </form>
+    </div>
+ 
+
+{% endblock %}

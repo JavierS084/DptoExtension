@@ -1,0 +1,25 @@
+{% extends 'inicio/index.html' %}
+{% load static %}
+{% block title %} Bienestar Estudiantil | Dpto Extension e Investigacion {% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block body %} 
+<div class="bienestar">
+   
+	
+    <div class="container">
+        <div class="azen-categories-list" data-cloneable=""><!-- ngRepeat: d in datos --> 
+            <p>
+                <span ng-repeat="d in datos" class="ng-scope">
+                    <h3 >Documento</h3>
+                    <br><span>Bienestar Estudiantil</span><br>
+                   <button class="colorconvenio" > <a href="https://drive.google.com/uc?export=download&confirm=no_antivirus&id=0B3WcMvmV_TvTS1pEVGZNcGlGemc" >Descargar</a></button> 
+                </span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

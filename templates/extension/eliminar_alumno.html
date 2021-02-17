@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}
+    Eliminar alumno 
+{% endblock %}
+    
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="span4">
+    <form method="POST">
+        {% csrf_token %}
+       <h2>Desea eliminar a? {{ alumno.nombre }}</h2>
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+        <a href=" {% url 'extension:lista_alumno'%}">Cancelar</a>
+    </form>
+</div>
+    
+
+{% endblock %}
